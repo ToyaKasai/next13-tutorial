@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
 
-import Footer from "../components/partials/Footer/Footer";
 import Header from "../components/partials/Header/Header";
+import Footer from "../components/partials/Footer/Footer";
 
 import styles from "./layout.module.scss";
 
@@ -20,9 +20,11 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
-        <Header />
-        <main className={styles["main-container"]}>{children}</main>
-        <Footer />
+        <div className={styles["layout-container"]}>
+          <Header />
+          <main className={styles["main"]}>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
